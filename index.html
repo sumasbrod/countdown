@@ -11,25 +11,30 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script lang="javascript">
+      window.onload = setInterval( 
+      function GetCountdownData() {
+        var d = new Date(2016, 7, 4, 18, 30, 0, 0);
+        var dNow = new Date();
+        var diff = Math.abs(d - dNow);
+        var newDate = new Date(diff)
+        var str = "Countdown is " + newDate.getDate() + " days " + newDate.getHours() + " hours " + newDate.getMinutes() + " minutes " + newDate.getSeconds() + " seconds ";
+        document.getElementById("maintext").innerHTML = str;
+        }
+        , 1000);
+    </script>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>Countdown</h1>
         <p>work countdown</p>
-
-        <p class="view"><a href="https://github.com/sumasbrod/countdown">View the Project on GitHub <small>sumasbrod/countdown</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/sumasbrod/countdown/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/sumasbrod/countdown/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/sumasbrod/countdown">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
       <section>
-        <h3>
-<a id="foocking-cowntdown-waaagh" class="anchor" href="#foocking-cowntdown-waaagh" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FOOCKING COWNTDOWN!!! WAAAGH!!!</h3>
+        <h3><a id="foocking-cowntdown-waaagh" class="anchor" href="#foocking-cowntdown-waaagh" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>FOOCKING COWNTDOWN!!! WAAAGH!!!</h3>
+        <div id="main">
+          <h1><p id="maintext"></p></h1>
+        </div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/sumasbrod">sumasbrod</a></p>
